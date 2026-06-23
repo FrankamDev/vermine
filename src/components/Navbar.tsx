@@ -61,7 +61,7 @@ export const Navbar: React.FC = () => {
               <Shield className="h-5 w-5 text-blue-950 dark:text-blue-950" />
             </div>
             <span className="text-2xl font-black tracking-tighter text-blue-950 dark:text-white">
-              NEXO<span className="text-lime-500">RA</span>
+              VERMI<span className="text-lime-500">NE</span>
             </span>
           </div>
 
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
           {/* CTA DESKTOP */}
           <div className="hidden md:block">
             <a
-              href="tel:+237600000000"
+              href="tel:+237690461830"
               className="group inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-950 dark:bg-lime-400 dark:hover:bg-lime-500 text-white dark:text-slate-950 font-bold px-6 py-3 rounded-2xl transition-all duration-300 shadow-lg shadow-blue-900/20 dark:shadow-lime-400/30 hover:shadow-xl active:scale-[0.97]"
             >
               <Activity className="h-4 w-4 text-lime-400 dark:text-blue-950 group-hover:animate-pulse" />
@@ -150,13 +150,13 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 px-6 py-8 space-y-6 shadow-xl">
-          <a
-            href="#accueil"
+          <Link
+            to="/"
             onClick={() => setIsOpen(false)}
             className="block text-lg font-medium text-blue-950 dark:text-slate-200 hover:text-lime-500 transition-colors"
           >
             Accueil
-          </a>
+          </Link>
           <a
             href="#services"
             onClick={() => setIsOpen(false)}
@@ -180,7 +180,7 @@ export const Navbar: React.FC = () => {
           </a>
 
           <a
-            href="tel:+237600000000"
+            href="tel:+237690461830"
             onClick={() => setIsOpen(false)}
             className="flex items-center justify-center gap-3 bg-lime-400 hover:bg-lime-500 text-blue-950 font-bold py-4 rounded-2xl w-full shadow-lg shadow-lime-400/30 active:scale-[0.97] transition-all"
           >
