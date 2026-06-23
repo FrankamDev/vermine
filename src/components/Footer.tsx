@@ -138,7 +138,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-3.5 h-3.5 text-lime-600 dark:text-lime-400 shrink-0" />
-                <a href="mailto:contact@nexora-cm.com" className="hover:text-slate-950 dark:hover:text-white text-slate-800 dark:text-slate-300">contact@nexora-cm.com</a>
+                <a href="mailto:contact@vermine-cm.com" className="hover:text-slate-950 dark:hover:text-white text-slate-800 dark:text-slate-300">contact@vermine-cm.com</a>
               </li>
             </ul>
           </div>
@@ -149,7 +149,7 @@ export function Footer() {
         <div className="pt-8 border-t border-slate-200 dark:border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4">
           
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-[11px] text-slate-500 dark:text-slate-500 font-light">
-            <span>© 2026 Nexora Assainissement. Tous droits réservés.</span>
+            <span>© 2026 vermine Assainissement. Tous droits réservés.</span>
             <span className="hidden sm:inline text-slate-300 dark:text-slate-800">|</span>
             <span className="flex items-center gap-1 text-[10px] uppercase font-bold text-slate-500 dark:text-slate-600 tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5 text-lime-600 dark:text-lime-500/70" /> Agrément Phyto-Sanitaire N°023/MINADER

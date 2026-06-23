@@ -158,7 +158,7 @@ export function Contact() {
                     </div>
                     <h4 className="text-lg font-bold text-slate-900 dark:text-white uppercase tracking-tight">Données reçues</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 font-light max-w-xs mx-auto leading-relaxed">
-                      Un ingénieur sanitaire Nexora vient de prendre en charge votre dossier. Vous allez être contacté sur votre mobile immédiatement.
+                      Un ingénieur sanitaire Vermine secret vient de prendre en charge votre dossier. Vous allez être contacté sur votre mobile immédiatement.
                     </p>
                   </motion.div>
                 )}
@@ -186,7 +186,7 @@ export function Contact() {
           {/* Copyrights & Localisation */}
           <div className="text-center md:text-right space-y-1">
             <p className="text-[11px] text-slate-500 font-light">
-              © 2026 Nexora Assainissement. Tous droits réservés.
+              © 2026 VermineSecret Assainissement. Tous droits réservés.
             </p>
             <p className="text-[9px] text-slate-600 font-bold tracking-widest uppercase flex items-center justify-center md:justify-end gap-1.5">
               <Activity className="w-2.5 h-2.5 text-lime-400" /> Normes Environnementales Camerounaises

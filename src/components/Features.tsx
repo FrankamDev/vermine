@@ -144,7 +144,7 @@ export function Features() {
             >
               Pourquoi le Cameroun <br /> fait confiance à 
               <span className="font-black uppercase tracking-wide bg-gradient-to-r from-blue-950 via-blue-800 to-lime-500 dark:from-white dark:via-blue-400 dark:to-lime-400 bg-clip-text text-transparent ml-2">
-                NEXORA
+                VERMINE SECRET
               </span>
             </motion.h3>
 

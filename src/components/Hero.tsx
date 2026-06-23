@@ -1,6 +1,7 @@
 
 import { motion, type Variants } from 'framer-motion';
 import { Sparkles, Star, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Hero() {
    
@@ -64,7 +65,7 @@ export function Hero() {
                     >
                         Protégez votre espace avec <br className="hidden sm:inline" />
                         <span className="font-black uppercase tracking-wide bg-gradient-to-r from-blue-950 via-blue-800 to-lime-500 dark:from-white dark:via-blue-400 dark:to-lime-400 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
-                            NEXORA
+                            VERMINE <span className='text-cyan-600'>_</span> SECRET
                         </span>
                     </motion.h1>
 
@@ -72,26 +73,26 @@ export function Hero() {
                         variants={fadeInUp}
                         className="mt-4 md:mt-6 text-sm md:text-base lg:text-lg text-slate-600 dark:text-slate-400 font-light max-w-md sm:max-w-xl leading-relaxed"
                     >
-                        Dites adieu aux cafards, rats, moustiques et autres nuisibles. Nexora assure des traitements de dératisation et désinfection certifiés, durables et sans danger pour votre environnement à Yaoundé et Douala.
+                        Dites adieu aux cafards, rats, moustiques et autres nuisibles. Vermine secret assure des traitements de dératisation et désinfection certifiés, durables et sans danger pour votre environnement à Yaoundé et Douala.
                     </motion.p>
 
                     <motion.div 
                         variants={fadeInUp}
                         className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto"
                     >
-                        <a 
-                            href="#devis" 
+                        <Link 
+                            to="/devis" 
                             className="w-full sm:w-auto px-8 py-3.5 text-[11px] font-bold tracking-widest uppercase text-slate-950 bg-lime-400 hover:bg-lime-500 dark:bg-lime-400 dark:hover:bg-lime-500 rounded-none transition-all duration-300 shadow-xl shadow-lime-400/10 flex items-center justify-center gap-3"
                         >
                             <Phone className="w-4 h-4" />
                             Urgence & Devis Gratuit
-                        </a>
-                        <a 
-                            href="#services" 
+                        </Link>
+                        <Link 
+                            to="/services" 
                             className="w-full sm:w-auto px-8 py-3.5 text-[11px] font-bold tracking-widest uppercase text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-slate-950 dark:hover:border-lime-500 rounded-none transition-all duration-300 text-center"
                         >
                             Nos protocoles
-                        </a>
+                        </Link>
                     </motion.div>
 
                     <motion.div 
@@ -127,8 +128,8 @@ export function Hero() {
 
                         <div className="relative w-full h-full rounded-[30px] sm:rounded-[36px] overflow-hidden bg-slate-900">
                             <img 
-                                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" 
-                                alt="Nexora intervention de désinfection" 
+                                src="/images/pest.jpg" 
+                                alt="Vermine intervention de désinfection" 
                                 className="w-full h-full object-cover object-center pointer-events-none opacity-80"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />

@@ -146,7 +146,7 @@ export function Services() {
                       className="border-t border-slate-100 dark:border-slate-800 pt-4 mt-4 overflow-hidden"
                     >
                       <h4 className="text-[10px] uppercase tracking-widest font-bold text-blue-950 dark:text-slate-300 flex items-center gap-2 mb-3">
-                        <ShieldAlert className="w-3.5 h-3.5 text-lime-500" /> Protocole Nexora Hysacam
+                        <ShieldAlert className="w-3.5 h-3.5 text-lime-500" /> Protocole Vermine Hysacam
                       </h4>
                       <ul className="space-y-2.5">
                         {nuisible.protocol.map((step, i) => (

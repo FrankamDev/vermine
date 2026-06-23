@@ -85,12 +85,12 @@ export const Navbar: React.FC = () => {
             >
               Urgence 237
             </Link>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-950 dark:hover:text-white transition-colors duration-200"
             >
               Contact
-            </a>
+            </Link>
 
             {/* Theme Toggle Desktop */}
             <button

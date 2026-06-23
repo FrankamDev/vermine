@@ -85,7 +85,7 @@ export function Urgence237() {
 
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-none mb-4">
             URGENCE<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-400 to-lime-400">NEXORA 237</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-400 to-lime-400">VERMINE-SECRET 237</span>
           </h1>
           <p className="max-w-2xl text-lg text-slate-400 font-light">
             Intervention rapide et certifiée contre les infestations. Chaque minute compte.
@@ -165,7 +165,7 @@ export function Urgence237() {
 
               {/* Main Emergency Button */}
               <motion.a
-  href="https://wa.me/237690461830?text=Bonjour%20Nexora%2C%20j'ai%20une%20URGENCE%20avec%20des%20nuisibles%20%28cafards%2C%20rats%2C%20gu%C3%AApes...%29.%20Pouvez-vous%20intervenir%20rapidement%20%3F%20Merci%20beaucoup."
+  href="https://wa.me/237690461830?text=Bonjour%Vermine-secret%2C%20j'ai%20une%20URGENCE%20avec%20des%20nuisibles%20%28cafards%2C%20rats%2C%20gu%C3%AApes...%29.%20Pouvez-vous%20intervenir%20rapidement%20%3F%20Merci%20beaucoup."
   target="_blank"
   rel="noopener noreferrer"
   whileHover={{ scale: 1.08 }}
@@ -186,7 +186,7 @@ export function Urgence237() {
 
   <div className="text-center">
     <div className="text-sm font-black tracking-[3px] text-emerald-100">MESSAGE WHATSAPP</div>
-    <div className="text-2xl font-black mt-1">SOS NEXORA</div>
+    <div className="text-2xl font-black mt-1">SOS VERMINE SECRET</div>
   </div>
 </motion.a>
 
