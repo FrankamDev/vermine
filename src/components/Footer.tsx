@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export function Footer() {
   const [localTime, setLocalTime] = useState<string>('');
 
-  // Gestion dynamique de l'horloge locale (GMT+1 pour le Cameroun)
+  
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
@@ -75,7 +75,7 @@ export function Footer() {
 
         </div>
 
-        {/* BLOC CENTRAL : LA GRILLE DE NAVIGATION EN ARCHITECTURE PLATTE */}
+  
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10 py-16 text-left">
           
           {/* COLONNE LOGO & ENGAGEMENT */}
@@ -102,7 +102,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* COLONNE LIENS NAV : L'OFFRE SANITAIRE */}
+          
           <div className="col-span-1 md:col-span-3 space-y-4">
             <h5 className="text-[10px] font-black uppercase tracking-widest text-slate-450 dark:text-slate-500">Nos Secteurs</h5>
             <ul className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 font-light">

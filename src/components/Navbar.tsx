@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:block">
             <a
               href="tel:+237690461830"
-              className="group inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-950 dark:bg-lime-400 dark:hover:bg-lime-500 text-white dark:text-slate-950 font-bold px-6 py-3 rounded-2xl transition-all duration-300 shadow-lg shadow-blue-900/20 dark:shadow-lime-400/30 hover:shadow-xl active:scale-[0.97]"
+              className="group inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-950 dark:bg-lime-400 dark:hover:bg-lime-500 text-white dark:text-slate-950 font-bold px-6 py-2 rounded transition-all duration-300 shadow-lg shadow-blue-900/20 dark:shadow-lime-400/30 hover:shadow-xl active:scale-[0.97]"
             >
               <Activity className="h-4 w-4 text-lime-400 dark:text-blue-950 group-hover:animate-pulse" />
               <span>Devis Rapide</span>

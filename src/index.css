@@ -30,4 +30,18 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+.rotate {
+    animation: rotation 3s linear infinite;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 @variant dark (&:where(.dark, .dark *));

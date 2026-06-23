@@ -55,7 +55,7 @@ export function Hero() {
                         variants={fadeInUp}
                         className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime-50 dark:bg-slate-900 border border-lime-200/30 dark:border-lime-500/10 text-[10px] md:text-xs font-semibold tracking-widest text-blue-950 dark:text-lime-400 uppercase mb-4 md:mb-6"
                     >
-                        <Sparkles className="w-3 h-3 text-lime-500 animate-pulse" />
+                        <Sparkles className="w-3 h-3 rotate text-lime-500 animate-pulse" />
                         Expertise & Désinfection Bio — Cameroun
                     </motion.div>
 
@@ -73,7 +73,7 @@ export function Hero() {
                         variants={fadeInUp}
                         className="mt-4 md:mt-6 text-sm md:text-base lg:text-lg text-slate-600 dark:text-slate-400 font-light max-w-md sm:max-w-xl leading-relaxed"
                     >
-                        Dites adieu aux cafards, rats, moustiques et autres nuisibles. Vermine secret assure des traitements de dératisation et désinfection certifiés, durables et sans danger pour votre environnement à Yaoundé et Douala.
+                        Dites adieu aux <span className='text-lime-400 bolder px-2xl'>cafards</span>, <span className='text-lime-400  px-2xl'>rats</span>, <span className='text-lime-400 px-2xl'>moustiques</span>, <span className='text-lime-400 px-2xl'>punaises de lit</span> et autres nuisibles. Vermine secret assure des traitements de dératisation et désinfection certifiés, durables et sans danger pour votre environnement à Yaoundé et Douala.
                     </motion.p>
 
                     <motion.div 
