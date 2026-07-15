@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield, Activity, Sun, Moon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Menu, X, Shield, Activity, Sun, Moon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -12,34 +12,36 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Initialisation du thème
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const isDarkMode = savedTheme === 'dark' || (!savedTheme && prefersDark);
-    
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
+    const isDarkMode = savedTheme === "dark" || (!savedTheme && prefersDark);
+
     setIsDark(isDarkMode);
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   // Toggle thème avec animation
   const toggleTheme = () => {
     if (isDark) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
       setIsDark(false);
     } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
       setIsDark(true);
     }
   };
@@ -48,13 +50,12 @@ export const Navbar: React.FC = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-lg shadow-lg border-b border-slate-100 dark:border-slate-800 py-3'
-          : 'bg-transparent py-5'
+          ? "bg-white/90 dark:bg-slate-950/90 backdrop-blur-lg shadow-lg border-b border-slate-100 dark:border-slate-800 py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-14">
-          
           {/* LOGO */}
           <div className="flex items-center gap-2 group cursor-pointer">
             <div className="w-10 h-10 bg-gradient-to-br from-lime-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-xl shadow-lime-400/30 group-hover:scale-110 group-active:scale-95 transition-all duration-300">
@@ -143,7 +144,11 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="p-3 text-blue-950 dark:text-white transition-transform duration-300 active:scale-90"
             >
-              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+              {isOpen ? (
+                <X className="h-7 w-7" />
+              ) : (
+                <Menu className="h-7 w-7" />
+              )}
             </button>
           </div>
         </div>
@@ -152,7 +157,7 @@ export const Navbar: React.FC = () => {
       {/* MOBILE MENU */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${
-          isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 px-6 py-8 space-y-6 shadow-xl">
@@ -164,11 +169,17 @@ export const Navbar: React.FC = () => {
             Accueil
           </Link>
           <a
-            href="#services"
+            href="/services"
             onClick={() => setIsOpen(false)}
             className="block text-lg font-medium text-slate-600 dark:text-slate-400 hover:text-blue-950 dark:hover:text-white transition-colors"
           >
             Nos Services
+          </a>
+          <a
+            href="/tarifs"
+            className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-950 dark:hover:text-white transition-colors duration-200"
+          >
+            Nos Tarifs
           </a>
           <Link
             to="/services237"
@@ -178,7 +189,7 @@ export const Navbar: React.FC = () => {
             Urgence 237
           </Link>
           <a
-            href="#contact"
+            href="/contact"
             onClick={() => setIsOpen(false)}
             className="block text-lg font-medium text-slate-600 dark:text-slate-400 hover:text-blue-950 dark:hover:text-white transition-colors"
           >
