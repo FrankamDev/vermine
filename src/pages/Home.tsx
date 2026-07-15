@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async"
+
 import { Faq } from "../components/Faq"
 import { Features } from "../components/Features"
 import { Footer } from "../components/Footer"

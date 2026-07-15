@@ -67,17 +67,23 @@ export const Navbar: React.FC = () => {
 
           {/* LIENS DESKTOP */}
           <div className="hidden md:flex items-center space-x-10">
-            <a
-              href="#accueil"
+            <Link
+              to="/"
               className="relative text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-blue-950 dark:hover:text-white transition-colors duration-200 after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:bg-lime-500 after:w-0 hover:after:w-full after:transition-all"
             >
               Accueil
-            </a>
+            </Link>
             <Link
               to="/services"
               className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-950 dark:hover:text-white transition-colors duration-200"
             >
               Nos Services
+            </Link>
+            <Link
+              to="/tarifs"
+              className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-950 dark:hover:text-white transition-colors duration-200"
+            >
+              Nos Tarifs
             </Link>
             <Link
               to="/services237"

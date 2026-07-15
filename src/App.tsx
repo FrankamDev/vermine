@@ -5,6 +5,8 @@ import { Urgence237 } from "./pages/Urgence237"
 import { NosServices } from "./pages/NosServices"
 import { Contact } from "./pages/Contact"
 
+import Tarifs from "./components/Tarifs"
+
 
 
 
@@ -16,10 +18,12 @@ const App = () => {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />
-      {/* <Route path="/contact" element={<Contact/>} /> */}
+
       <Route path="/services" element={<NosServices/>} />
       <Route path="/services237" element={<Urgence237/>} />
       <Route path="/contact" element={<Contact />} />
+
+      <Route path="/tarifs" element={<Tarifs />} />
     </Routes>
     </BrowserRouter>
     
