@@ -1,21 +1,34 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Shield, Phone, Mail, MapPin, ArrowUp, ShieldCheck, Activity } from 'lucide-react';
-import { FaFacebook } from 'react-icons/fa';
-import { LiaLinkedin } from 'react-icons/lia';
-import { Link } from 'react-router-dom';
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Shield,
+  Phone,
+  Mail,
+  MapPin,
+  ArrowUp,
+  ShieldCheck,
+  Activity,
+} from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaTelegramPlane,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export function Footer() {
-  const [localTime, setLocalTime] = useState<string>('');
+  const [localTime, setLocalTime] = useState<string>("");
 
-  
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
-      const timeString = now.toLocaleTimeString('fr-FR', {
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: 'Africa/Douala'
+      const timeString = now.toLocaleTimeString("fr-FR", {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Africa/Douala",
       });
       setLocalTime(timeString);
     };
@@ -25,150 +38,254 @@ export function Footer() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return (
-    <footer className="relative bg-stone-50 dark:bg-slate-950 text-slate-900 dark:text-white pt-24 pb-12 overflow-hidden border-t border-slate-200 dark:border-slate-900/60 transition-colors duration-500">
-      
-      {/* TRACEURS ET RADAR GRAPHIQUE EN ARRIÈRE-PLAN */}
-      <div className="absolute inset-0 bg-[radial-gradient(#00000003_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff01_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-[40vw] bg-lime-500/5 dark:bg-lime-500/5 rounded-full blur-[160px] pointer-events-none" />
+  const socialLinks = [
+    {
+      name: "Facebook",
+      icon: FaFacebookF,
+      href: "https://facebook.com/verminesecret",
+      color: "hover:bg-[#1877F2] hover:text-white border-[#1877F2]/20",
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      href: "https://instagram.com/verminesecret",
+      color:
+        "hover:bg-gradient-to-tr hover:from-[#E1306C] hover:via-[#C13584] hover:to-[#F56040] hover:text-white border-pink-500/10",
+    },
+    {
+      name: "WhatsApp",
+      icon: FaWhatsapp,
+      href: "https://wa.me/237658769733",
+      color: "hover:bg-[#25D366] hover:text-white border-[#25D366]/20",
+    },
+    {
+      name: "Telegram",
+      icon: FaTelegramPlane,
+      href: "https://t.me/verminesecret",
+      color: "hover:bg-[#229ED9] hover:text-white border-[#229ED9]/20",
+    },
+  ];
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 w-full">
-        
-        {/* BLOC SUPÉRIEUR : LE RADAR DE SÉRÉNITÉ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-16 border-b border-slate-200 dark:border-slate-900 items-center">
-          
-          <div className="lg:col-span-7 space-y-4 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-lime-500/10 dark:bg-lime-400/10 border border-lime-500/20 dark:border-lime-400/20 text-[9px] font-black tracking-widest text-lime-700 dark:text-lime-400 uppercase">
-              <Activity className="w-3 h-3 animate-pulse" /> Réseau Sanitaire National Connecté
+  return (
+    <footer className="relative bg-stone-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 pt-20 pb-12 overflow-hidden border-t border-slate-200 dark:border-slate-900 transition-colors duration-500">
+      {/* Traceurs d'arrière-plan */}
+      <div className="absolute inset-0 bg-[radial-gradient(#00000003_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff02_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-[40vw] bg-emerald-500/5 dark:bg-emerald-400/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10 w-full">
+        {/* Section Supérieure */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-16 border-b border-slate-200 dark:border-slate-900">
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-100 dark:bg-emerald-950/40 text-emerald-750 dark:text-emerald-450 text-xs font-bold tracking-widest rounded-full border border-emerald-200/50 dark:border-emerald-900/30">
+              <Activity className="w-3.5 h-3.5 animate-pulse" />
+              VERMINE SECRET • Réseau Sanitaire National
             </div>
-            <h3 className="text-2xl sm:text-3xl font-sans font-light tracking-tight leading-tight text-slate-950 dark:text-white">
-              Prêt à sécuriser <br className="sm:hidden" /> votre infrastructure ? <br />
-              <span className="font-black text-blue-950 dark:text-lime-400 uppercase tracking-wide">
-                Nos brigades sont en alerte.
-              </span>
+
+            <h3 className="text-3xl sm:text-4xl font-black tracking-tighter leading-none text-slate-950 dark:text-white">
+              Protégeons ensemble
+              <br />
+              votre espace de vie.
             </h3>
+
+            <p className="text-slate-600 dark:text-slate-400 max-w-md text-[15px]">
+              Solutions expertes et éco-responsables de désinsectisation,
+              dératisation et assainissement pour particuliers et professionnels
+              au Cameroun.
+            </p>
           </div>
 
-          {/* LA CARD DE STATUT TEMPS RÉEL (Effet App Hybride) */}
-          <div className="lg:col-span-5 w-full max-w-sm mx-auto lg:ml-auto">
-            <div className="bg-white dark:bg-stone-900/50 border border-slate-200 dark:border-slate-900 p-5 relative overflow-hidden shadow-sm dark:shadow-none">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-lime-500/10 to-transparent pointer-events-none" />
-              
-              <div className="flex items-center justify-between">
+          {/* Statut Temps Réel */}
+          <div className="lg:col-span-5 flex items-center">
+            <div className="bg-white dark:bg-slate-900/55 border border-slate-200 dark:border-slate-900/80 rounded-3xl p-6 shadow-sm w-full">
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-lime-500 dark:bg-lime-400 animate-ping" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Statut Réseau</span>
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-450 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-450">
+                    Intervention Actives 24h
+                  </span>
                 </div>
-                <span className="text-[11px] font-mono font-bold text-slate-950 dark:text-lime-400 bg-stone-50 dark:bg-slate-950 px-2 py-0.5 border border-slate-200 dark:border-slate-900">
-                  Douala / Yaoundé : {localTime || 'En ligne'}
+                <span className="font-mono text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                  {localTime || "En ligne"}
                 </span>
               </div>
-
-              <p className="text-xs font-light text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-                4 équipes mobiles actuellement en patrouille de désinfection préventive. Temps d’approche moyen réduit.
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                Nos brigades d'intervention rapide couvrent actuellement Douala,
+                Yaoundé et leurs environs.
               </p>
             </div>
           </div>
-
         </div>
 
-  
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 py-16 text-left">
-          
-          {/* COLONNE LOGO & ENGAGEMENT */}
-          <div className="col-span-2 md:col-span-4 space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-950 dark:bg-lime-400 text-white dark:text-slate-950 flex items-center justify-center font-black">
-                <Shield className="w-4 h-4" />
+        {/* Section Principale */}
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-y-12 py-16 gap-x-6">
+          {/* Logo & Description */}
+          <div className="col-span-2 md:col-span-5 space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 bg-emerald-700 dark:bg-emerald-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/10">
+                <Shield className="w-6 h-6" />
               </div>
-              <span className="text-lg font-black tracking-tight text-slate-950 dark:text-white">
-                NEXO<span className="text-lime-600 dark:text-lime-400">RA</span>
-              </span>
+              <div>
+                <span className="text-3xl font-black tracking-tighter text-slate-950 dark:text-white">
+                  VERMINE
+                </span>
+                <p className="text-[10px] text-emerald-600 dark:text-emerald-400 -mt-1.5 font-bold tracking-widest">
+                  SECRET
+                </p>
+              </div>
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-xs">
-              Ingénierie de pointe en dératisation, désinsectisation et décontamination biologique pour particuliers et industries exigeantes au Cameroun.
+
+            <p className="text-slate-600 dark:text-slate-400 text-[15px] max-w-sm">
+              L'élite de la lutte anti-nuisibles au Cameroun. Élimination
+              radicale, traitements écologiques et protocoles sanitaires
+              conformes aux normes internationales.
             </p>
-            {/* Boutons Sociaux */}
-            <div className="flex gap-2">
-              <Link to="/" className="w-9 h-9 bg-stone-900  text-slate-600 dark:text-white hover:bg-blue-950 hover:text-white dark:hover:bg-lime-400 dark:hover:text-slate-950 transition-colors flex items-center justify-center border border-slate-200 dark:border-slate-900 shadow-sm dark:shadow-none">
-                <FaFacebook className="w-4 h-4" />
-              </Link>
-              <a href="#" className="w-9 h-9 bg-stone-900 dark:bg-white text-slate-600 dark:text-white hover:bg-blue-950 hover:text-white dark:hover:bg-lime-400 dark:hover:text-slate-950 transition-colors flex items-center justify-center border border-slate-200 dark:border-slate-900 shadow-sm dark:shadow-none">
-                <LiaLinkedin className="w-4 h-4" />
+
+            {/* Réseaux Sociaux 3D */}
+            <div className="flex gap-3 pt-2">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    whileHover={{
+                      scale: 1.12,
+                      y: -4,
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-12 h-12 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-350 text-2xl shadow-sm transition-all duration-300 ${social.color}`}
+                    aria-label={social.name}
+                  >
+                    <Icon />
+                  </motion.a>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Secteurs */}
+          <div className="col-span-1 md:col-span-3 space-y-6">
+            <h5 className="text-xs font-black uppercase tracking-widest text-slate-450 dark:text-slate-500">
+              Nos Secteurs
+            </h5>
+            <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-emerald-650 dark:hover:text-emerald-400 transition-colors"
+                >
+                  Résidences & Villas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-emerald-650 dark:hover:text-emerald-400 transition-colors"
+                >
+                  Bureaux & Commerces
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-emerald-650 dark:hover:text-emerald-400 transition-colors"
+                >
+                  Hôtels & Restauration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-emerald-650 dark:hover:text-emerald-400 transition-colors"
+                >
+                  Complexes Industriels
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Engagements */}
+          <div className="col-span-1 md:col-span-4 space-y-6">
+            <h5 className="text-xs font-black uppercase tracking-widest text-slate-450 dark:text-slate-500">
+              Charte Qualité
+            </h5>
+            <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+              <li className="flex items-center gap-2">
+                ✔ Intervention sous 24h garantie
+              </li>
+              <li className="flex items-center gap-2">
+                ✔ Produits certifiés MINADER
+              </li>
+              <li className="flex items-center gap-2">
+                ✔ Garantie de résultats de 6 à 12 mois
+              </li>
+              <li className="flex items-center gap-2">
+                ✔ Rapports de traitement détaillés
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Coordonnées & Copyright */}
+        <div className="pt-10 border-t border-slate-200 dark:border-slate-900 flex flex-col lg:flex-row justify-between items-center gap-6 text-sm">
+          <div className="flex flex-col md:flex-row items-center gap-x-8 gap-y-3 text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-emerald-600 dark:text-emerald-500" />
+              <a
+                href="tel:+237658769733"
+                className="hover:text-emerald-700 dark:hover:text-emerald-400 font-semibold text-slate-900 dark:text-slate-200"
+              >
+                +237 658 76 97 33
               </a>
             </div>
+
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-emerald-600 dark:text-emerald-500" />
+              <a
+                href="mailto:contact.vermin.cm@gmail.com"
+                className="hover:text-emerald-700 dark:hover:text-emerald-400 text-slate-900 dark:text-slate-200"
+              >
+                contact.vermin.cm@gmail.com
+              </a>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-500" />
+              <span className="text-slate-900 dark:text-slate-200">
+                Douala • Yaoundé • Cameroun
+              </span>
+            </div>
           </div>
 
-          
-          <div className="col-span-1 md:col-span-3 space-y-4">
-            <h5 className="text-[10px] font-black uppercase tracking-widest text-slate-450 dark:text-slate-500">Nos Secteurs</h5>
-            <ul className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 font-light">
-              <li><a href="#services-global" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Entreprises & Sièges</a></li>
-              <li><a href="#services-global" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Hôtels & Restauration (HACCP)</a></li>
-              <li><a href="#services-global" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Complexes Industriels</a></li>
-              <li><a href="#services-global" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Résidences & Villas</a></li>
-            </ul>
-          </div>
-
-          {/* COLONNE LIENS NAV : LEGAL & COMPLIANCE */}
-          <div className="col-span-1 md:col-span-2 space-y-4">
-            <h5 className="text-[10px] font-black uppercase tracking-widest text-slate-450 dark:text-slate-500">Garanties</h5>
-            <ul className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 font-light">
-              <li><a href="#features" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Charte Bio-Sécurité</a></li>
-              <li><a href="#features" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Contrats de 6 Mois</a></li>
-              <li><a href="#faq" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Centre d'aide / FAQ</a></li>
-              <li><a href="#contact" className="hover:text-lime-600 dark:hover:text-lime-400 transition-colors">Demande de Devis</a></li>
-            </ul>
-          </div>
-
-          {/* COLONNE DIRECTE : QUARTIER GÉNÉRAL CORPO */}
-          <div className="col-span-2 md:col-span-3 space-y-4">
-            <h5 className="text-[10px] font-black uppercase tracking-widest text-slate-450 dark:text-slate-500">Coordonnées directes</h5>
-            <ul className="space-y-3 text-xs text-slate-600 dark:text-slate-400 font-light">
-              <li className="flex items-center gap-2.5">
-                <MapPin className="w-3.5 h-3.5 text-lime-600 dark:text-lime-400 shrink-0" />
-                <span className="text-slate-800 dark:text-slate-300">Bonapriso, Douala / Bastos, Yaoundé</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-3.5 h-3.5 text-lime-600 dark:text-lime-400 shrink-0" />
-                <a href="tel:+237600000000" className="hover:text-slate-950 dark:hover:text-white font-medium text-slate-800 dark:text-slate-300">+237 6xx xx xx xx</a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-3.5 h-3.5 text-lime-600 dark:text-lime-400 shrink-0" />
-                <a href="mailto:contact@vermine-cm.com" className="hover:text-slate-950 dark:hover:text-white text-slate-800 dark:text-slate-300">contact@vermine-cm.com</a>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        {/* BLOC INFERIEUR : COPYRIGHT & RETOUR HAUT DE PAGE */}
-        <div className="pt-8 border-t border-slate-200 dark:border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4">
-          
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-[11px] text-slate-500 dark:text-slate-500 font-light">
-            <span>© 2026 vermine Assainissement. Tous droits réservés.</span>
-            <span className="hidden sm:inline text-slate-300 dark:text-slate-800">|</span>
-            <span className="flex items-center gap-1 text-[10px] uppercase font-bold text-slate-500 dark:text-slate-600 tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5 text-lime-600 dark:text-lime-500/70" /> Agrément Phyto-Sanitaire N°023/MINADER
+          <div className="text-xs text-slate-500 dark:text-slate-500 flex flex-col md:flex-row items-center gap-x-4 gap-y-2 text-center md:text-left">
+            <span>© 2026 Vermine Secret. Tous droits réservés.</span>
+            <span className="hidden md:inline text-slate-300 dark:text-slate-800">
+              •
+            </span>
+            <span className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-[10px] text-slate-600 dark:text-slate-450">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-550" />{" "}
+              Agréé MINADER N°023
             </span>
           </div>
 
-          {/* LE BOUTON HAUT DE ÉCRAN */}
           <motion.button
             onClick={scrollToTop}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            className="p-3 bg-white dark:bg-stone-900 border border-slate-200 dark:border-slate-900 text-slate-500 dark:text-slate-400 hover:text-lime-600 dark:hover:text-lime-400 hover:border-slate-300 dark:hover:border-slate-800 shadow-sm dark:shadow-none transition-all focus:outline-none flex items-center justify-center rounded-none group"
-            aria-label="Retourner en haut de la page"
+            whileHover={{ y: -4 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-250 dark:hover:border-emerald-900/50 shadow-sm transition-all"
+            aria-label="Retourner en haut"
           >
-            <ArrowUp className="w-4 h-4 group-hover:animate-bounce" />
+            <ArrowUp className="w-5 h-5" />
           </motion.button>
-
         </div>
-
       </div>
     </footer>
   );

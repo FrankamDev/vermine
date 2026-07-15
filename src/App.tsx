@@ -6,6 +6,7 @@ import { NosServices } from "./pages/NosServices"
 import { Contact } from "./pages/Contact"
 
 import Tarifs from "./components/Tarifs"
+import WhatsAppButton from "./components/WhatsAppButton"
 
 
 
@@ -26,7 +27,7 @@ const App = () => {
       <Route path="/tarifs" element={<Tarifs />} />
     </Routes>
     </BrowserRouter>
-    
+    <WhatsAppButton/>
     </>
   )
 }
